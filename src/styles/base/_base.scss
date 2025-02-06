@@ -1,6 +1,35 @@
 // FONT
 $default-font-size: 1.6rem;
 
+// Breakpoint Variables
+$breakpoint-small: 480px; // Mobile
+$breakpoint-medium: 860px; // Tablet
+$breakpoint-large: 1024px; // Desktop
+
+@mixin small {
+  @media (max-width: #{$breakpoint-small}) {
+    @content;
+  }
+}
+
+@mixin medium {
+  @media (min-width: #{$breakpoint-small + 1}) and (max-width: #{$breakpoint-medium - 1}) {
+    @content;
+  }
+}
+
+@mixin large {
+  @media (min-width: #{$breakpoint-medium}) and (max-width: #{$breakpoint-large - 1}) {
+    @content;
+  }
+}
+
+@mixin xlarge {
+  @media (min-width: #{$breakpoint-large}) {
+    @content;
+  }
+}
+
 :root {
   --color-white: #faeded;
   --color-black: #0f0202;
@@ -19,14 +48,26 @@ $default-font-size: 1.6rem;
 }
 
 html {
+  transition: all 0.2s;
   box-sizing: border-box;
   font-size: 62.5%; //10px / 16px (browser default)-> 1rem = 10px
 }
 
-@media all and (max-width: 600px) {
+@include small {
   html {
-    box-sizing: border-box;
     font-size: 50%;
+  }
+}
+
+@include medium {
+  html {
+    font-size: 53%;
+  }
+}
+
+@include large {
+  html {
+    font-size: 56%;
   }
 }
 
@@ -41,18 +82,22 @@ h2 {
   font-weight: 350;
   font-size: 4rem;
 }
+
 p {
   font-size: 2.5rem;
   font-weight: 300;
 }
+
 ::-webkit-scrollbar {
   width: 1rem;
 }
+
 ::-webkit-scrollbar-track {
   background: var(--color-purple);
   border-radius: 100vw;
   margin-block: 0.5rem;
 }
+
 ::-webkit-scrollbar-thumb {
   background: var(--color-purple);
   border: 0.2rem solid var(--color-green);

@@ -1,40 +1,70 @@
 <header class="header">
-  <div class="nav-left">
+  <div class="title-container">
     <img
       src="../../../assets/images/cottage.png"
-      alt="Cottage Icon"
-      class="nav-icon"
+      alt="Red Cottage Bakery"
+      class="logo"
     />
-    <span class="nav-title">Red Cottage Bakery</span>
+    <span class="title">Red Cottage Bakery</span>
   </div>
 
-  <nav
-    aria-label="Section Navigation"
-    [class.open]="isMobileMenuOpen"
-    class="mobile-menu"
-  >
-    <ul>
-      <li *ngFor="let section of sections; trackBy: trackBySection">
-        <a
-          href="#{{ section }}"
-          (click)="scrollToSection($event, section)"
-          [class.active]="isActive(section)"
-        >
-          {{ section | titlecase }}
-        </a>
-      </li>
-    </ul>
-  </nav>
+  <div class="main-nav">
+    <nav aria-label="Section Navigation">
+      <ul>
+        <li *ngFor="let section of sections; trackBy: trackBySection">
+          <a
+            href="#{{ section }}"
+            (click)="scrollToSection($event, section)"
+            [class.active]="isActive(section)"
+          >
+            {{ section | titlecase }}
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+
   <a
     href="https://www.instagram.com/redcottagebakery/"
     target="_blank"
-    class="nav-icon-link"
+    class="instagram"
   >
     <img
       src="../../../assets/images/instagram.svg"
       alt="Instagram Icon"
-      class="nav-icon-right"
+      class="icon"
     />
   </a>
-  <button class="menu-button" (click)="toggleMobileMenu()">Menu</button>
+
+  <a class="menu-open-close" (click)="toggleMobileMenu()">
+    <img
+      src="../../../assets/images/menu.svg"
+      alt="Open Menu"
+      class="icon"
+      *ngIf="!isMobileMenuOpen"
+    />
+
+    <img
+      src="../../../assets/images/close.svg"
+      alt="Close Menu"
+      class="icon"
+      *ngIf="isMobileMenuOpen"
+    />
+  </a>
+
+  <nav class="mobile-nav" *ngIf="isMobileMenuOpen">
+    <div>
+      <ul>
+        <li *ngFor="let section of sections; trackBy: trackBySection">
+          <a
+            href="#{{ section }}"
+            (click)="scrollToSection($event, section)"
+            [class.active]="isActive(section)"
+          >
+            {{ section | titlecase }}
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
 </header>

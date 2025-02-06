@@ -14,38 +14,31 @@
   height: 6rem;
 }
 
-.nav-left {
+.title-container {
+  position: absolute;
+  left: 0;
   display: flex;
   align-items: center;
-  position: absolute;
-  left: 1rem;
 }
 
-.nav-icon {
+.logo {
   height: 6rem;
   width: auto;
 }
 
-.nav-title {
+.title {
   font-size: 2.5rem;
   margin-left: 0.5rem;
   color: var(--color-primary); // Update the color to var(--color-primary)
 }
 
-.nav-icon-link {
-  position: absolute;
-  right: 1rem;
+.icon {
   display: flex;
-  align-items: center;
-  height: 100%;
-}
-
-.nav-icon-right {
   height: 3rem;
   width: auto;
 }
 
-.menu-button {
+.menu-open-close {
   display: none;
   background: none;
   border: none;
@@ -53,9 +46,18 @@
   font-size: 1.5rem;
   padding: 0.5rem 1rem;
   position: absolute;
-  right: 4rem; // Adjusted to make space for the Instagram icon
+  right: 0.5rem; // Adjusted to make space for the Instagram icon
 }
 
+.mobile-nav {
+  display: none;
+}
+
+.instagram {
+  position: absolute;
+  right: 0;
+  padding-right: 1rem;
+}
 nav {
   ul {
     display: flex;
@@ -73,7 +75,7 @@ nav {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.9); // Dark background for overlay
+    background: rgba(255, 255, 255, 0.9);
     z-index: 1001;
     ul {
       flex-direction: column;
@@ -84,50 +86,51 @@ nav {
   }
 }
 
-button {
-  background: none;
-  border: none;
-  cursor: pointer;
-  font-size: 1rem;
-  padding: 0.5rem 1rem;
-  transition: 0.3s;
-
-  &.active {
-    font-weight: bold;
-    color: #a0522d;
-    text-decoration: underline;
-  }
-
-  &:hover {
-    color: #a0522d;
-  }
-}
-
 a {
   font-size: 2.5rem;
-  color: var(--color-purple);
+  text-decoration: none;
   font-weight: 250;
-  text-decoration: none; // Remove underline from links
-}
-
-a.active {
-  font-weight: 350;
-  color: var(--color-green); // Active link color
+  color: var(--color-purple);
+  &.active {
+    font-weight: 350;
+    color: var(--color-green); // Active link color
+  }
 }
 
 // Mobile styles
-@media (max-width: 768px) {
-  .menu-button {
-    display: block;
-    right: 4rem; // Adjusted to make space for the Instagram icon
-  }
+@media (max-width: 835px) {
+  .mobile {
+    &-nav {
+      position: absolute;
+      top: 0;
+      left: 0;
 
-  .nav-icon-link {
-    display: none; // Hide the Instagram icon in mobile view
-  }
+      display: flex;
+      flex-direction: column;
+      background-color: white; //RSMTODO
 
-  nav {
+      position: absolute;
+      width: 100%;
+      margin-top: 6rem;
+      ul {
+        flex-direction: column;
+        display: flex;
+        align-items: center;
+        gap: 3rem;
+        padding: 2rem 0rem;
+      }
+    }
+  }
+  .main-nav {
     display: none;
+  }
+  .menu-open-close {
+    display: flex;
+    justify-content: center;
+  }
+
+  .instagram {
+    display: none; // Hide the Instagram icon in mobile view
   }
 
   nav.open {
@@ -137,7 +140,7 @@ a.active {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.9); // Dark background for overlay
+    background: rgba(255, 255, 255, 0.9);
     z-index: 1001;
     flex-direction: column;
     justify-content: center;
