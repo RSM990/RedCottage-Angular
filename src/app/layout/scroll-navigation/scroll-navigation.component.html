@@ -1,6 +1,18 @@
 <header class="header">
-  <button class="menu-button" (click)="toggleMobileMenu()">Menu</button>
-  <nav aria-label="Section Navigation" [class.open]="isMobileMenuOpen">
+  <div class="nav-left">
+    <img
+      src="../../../assets/images/cottage.png"
+      alt="Cottage Icon"
+      class="nav-icon"
+    />
+    <span class="nav-title">Red Cottage Bakery</span>
+  </div>
+
+  <nav
+    aria-label="Section Navigation"
+    [class.open]="isMobileMenuOpen"
+    class="mobile-menu"
+  >
     <ul>
       <li *ngFor="let section of sections; trackBy: trackBySection">
         <a
@@ -13,4 +25,16 @@
       </li>
     </ul>
   </nav>
+  <a
+    href="https://www.instagram.com/redcottagebakery/"
+    target="_blank"
+    class="nav-icon-link"
+  >
+    <img
+      src="../../../assets/images/instagram.svg"
+      alt="Instagram Icon"
+      class="nav-icon-right"
+    />
+  </a>
+  <button class="menu-button" (click)="toggleMobileMenu()">Menu</button>
 </header>

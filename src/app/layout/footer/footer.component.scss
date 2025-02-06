@@ -5,5 +5,8 @@ footer {
   align-items: center;
   color: var(--color-purple);
   flex-direction: row-reverse;
-  font-size: 1.3rem;
+}
+
+.footer-text {
+  font-size: 1.3rem !important;
 }

@@ -11,6 +11,38 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 6rem;
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  left: 1rem;
+}
+
+.nav-icon {
+  height: 6rem;
+  width: auto;
+}
+
+.nav-title {
+  font-size: 2.5rem;
+  margin-left: 0.5rem;
+  color: var(--color-primary); // Update the color to var(--color-primary)
+}
+
+.nav-icon-link {
+  position: absolute;
+  right: 1rem;
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.nav-icon-right {
+  height: 3rem;
+  width: auto;
 }
 
 .menu-button {
@@ -21,7 +53,7 @@
   font-size: 1.5rem;
   padding: 0.5rem 1rem;
   position: absolute;
-  right: 1rem;
+  right: 4rem; // Adjusted to make space for the Instagram icon
 }
 
 nav {
@@ -41,7 +73,7 @@ nav {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(0, 0, 0, 0.9); // Dark background for overlay
     z-index: 1001;
     ul {
       flex-direction: column;
@@ -72,12 +104,14 @@ button {
 }
 
 a {
-  font-size: 1.5rem; // Enlarged font size
-  color: var(--color-purple); // Main link color
+  font-size: 2.5rem;
+  color: var(--color-purple);
+  font-weight: 250;
+  text-decoration: none; // Remove underline from links
 }
 
 a.active {
-  font-weight: bold;
+  font-weight: 350;
   color: var(--color-green); // Active link color
 }
 
@@ -85,6 +119,11 @@ a.active {
 @media (max-width: 768px) {
   .menu-button {
     display: block;
+    right: 4rem; // Adjusted to make space for the Instagram icon
+  }
+
+  .nav-icon-link {
+    display: none; // Hide the Instagram icon in mobile view
   }
 
   nav {
@@ -92,6 +131,25 @@ a.active {
   }
 
   nav.open {
-    display: block;
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9); // Dark background for overlay
+    z-index: 1001;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .menu {
+    font-size: 2em; // Increase the font size for mobile
+    padding: 20px; // Add padding for better touch targets
+  }
+
+  .menu-item {
+    margin: 20px 0; // Add margin between menu items
   }
 }

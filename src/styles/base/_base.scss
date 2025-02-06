@@ -7,7 +7,7 @@ $default-font-size: 1.6rem;
   --color-primary: #dc0101;
 
   --color-purple: #8c52ff;
-  --color-green: #159768;
+  --color-green: #00e791;
 }
 
 *,
@@ -35,6 +35,15 @@ body {
   color: var(--color-black);
   font-weight: 400;
   line-height: 1.6;
+}
+
+h2 {
+  font-weight: 350;
+  font-size: 4rem;
+}
+p {
+  font-size: 2.5rem;
+  font-weight: 300;
 }
 ::-webkit-scrollbar {
   width: 1rem;
