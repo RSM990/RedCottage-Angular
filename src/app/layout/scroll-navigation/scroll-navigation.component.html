@@ -1,0 +1,16 @@
+<header class="header">
+  <button class="menu-button" (click)="toggleMobileMenu()">Menu</button>
+  <nav aria-label="Section Navigation" [class.open]="isMobileMenuOpen">
+    <ul>
+      <li *ngFor="let section of sections; trackBy: trackBySection">
+        <a
+          href="#{{ section }}"
+          (click)="scrollToSection($event, section)"
+          [class.active]="isActive(section)"
+        >
+          {{ section | titlecase }}
+        </a>
+      </li>
+    </ul>
+  </nav>
+</header>

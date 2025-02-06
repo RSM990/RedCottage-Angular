@@ -1,0 +1,59 @@
+// FONT
+$default-font-size: 1.6rem;
+
+:root {
+  --color-white: #faeded;
+  --color-black: #0f0202;
+  --color-primary: #dc0101;
+
+  --color-purple: #8c52ff;
+  --color-green: #159768;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%; //10px / 16px (browser default)-> 1rem = 10px
+}
+
+@media all and (max-width: 600px) {
+  html {
+    box-sizing: border-box;
+    font-size: 50%;
+  }
+}
+
+body {
+  //   font-family: sans-serif;
+  color: var(--color-black);
+  font-weight: 400;
+  line-height: 1.6;
+}
+::-webkit-scrollbar {
+  width: 1rem;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-purple);
+  border-radius: 100vw;
+  margin-block: 0.5rem;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-purple);
+  border: 0.2rem solid var(--color-green);
+  border-radius: 100vw;
+  width: 9rem;
+}
+
+@supports (scrollbar-color: red blue) {
+  * {
+    scrollbar-color: var(--color-purple) var(--color-green);
+    scrollbar-width: thin;
+  }
+}
