@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Location } from '@angular/common';
+import { BrowserDetectionService } from '../../core/services/browser-detection.service';
 
 @Component({
   selector: 'app-scroll-navigation',
@@ -21,7 +22,8 @@ export class ScrollNavigationComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    private location: Location
+    private location: Location,
+    private browserDetectionService: BrowserDetectionService // Inject the browser detection service
   ) {}
 
   ngOnInit(): void {
@@ -65,7 +67,9 @@ export class ScrollNavigationComponent implements OnInit {
         if (entry.isIntersecting && !this.isManualScrolling) {
           this.activeSection = entry.target.id;
           this.location.replaceState(this.router.url.split('#')[0]);
-          this.autoScrollToNextHeading(entry.target);
+          if (!this.browserDetectionService.isChrome()) {
+            this.autoScrollToNextHeading(entry.target);
+          }
         }
       });
     }, options);
