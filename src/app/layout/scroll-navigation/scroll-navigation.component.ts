@@ -65,6 +65,7 @@ export class ScrollNavigationComponent implements OnInit {
         if (entry.isIntersecting && !this.isManualScrolling) {
           this.activeSection = entry.target.id;
           this.location.replaceState(this.router.url.split('#')[0]);
+          this.autoScrollToNextHeading(entry.target);
         }
       });
     }, options);
@@ -75,6 +76,16 @@ export class ScrollNavigationComponent implements OnInit {
         this.observer.observe(element);
       }
     });
+  }
+
+  autoScrollToNextHeading(currentElement: Element): void {
+    const rect = currentElement.getBoundingClientRect();
+    if (
+      rect.top < window.innerHeight / 2 &&
+      rect.bottom > window.innerHeight / 2
+    ) {
+      currentElement.scrollIntoView({ behavior: 'smooth' });
+    }
   }
 
   toggleMobileMenu(): void {
