@@ -1,6 +1,8 @@
-<app-scroll-navigation></app-scroll-navigation>
+<app-scroll-navigation
+  (mobileMenuStateChange)="onMobileMenuStateChange($event)"
+></app-scroll-navigation>
 
-<main>
+<main [class.hidden]="isMobileMenuOpen()">
   <section id="home">
     <app-welcome></app-welcome>
   </section>

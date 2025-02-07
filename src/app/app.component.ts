@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { RouterModule, RouterOutlet } from '@angular/router';
 import { FooterComponent } from './layout/footer/footer.component';
 import { ScrollNavigationComponent } from './layout/scroll-navigation/scroll-navigation.component';
@@ -7,11 +7,13 @@ import { AboutComponent } from './sections/about/about.component';
 import { MenuComponent } from './sections/menu/menu.component';
 import { ScheduleComponent } from './sections/schedule/schedule.component';
 import { ContactComponent } from './sections/contact/contact.component';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-root',
   imports: [
     RouterModule,
+    CommonModule,
     FooterComponent,
     ScrollNavigationComponent,
     WelcomeComponent,
@@ -25,4 +27,9 @@ import { ContactComponent } from './sections/contact/contact.component';
 })
 export class AppComponent {
   title = 'RedCottage-Angular';
+  isMobileMenuOpen = signal(false);
+
+  onMobileMenuStateChange(isOpen: boolean) {
+    this.isMobileMenuOpen.set(isOpen);
+  }
 }

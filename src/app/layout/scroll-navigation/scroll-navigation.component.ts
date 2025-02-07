@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Location } from '@angular/common';
@@ -18,6 +18,8 @@ export class ScrollNavigationComponent implements OnInit {
 
   private observer!: IntersectionObserver;
   private isManualScrolling = false;
+
+  @Output() mobileMenuStateChange = new EventEmitter<boolean>();
 
   constructor(
     private route: ActivatedRoute,
@@ -94,6 +96,7 @@ export class ScrollNavigationComponent implements OnInit {
 
   toggleMobileMenu(): void {
     this.isMobileMenuOpen = !this.isMobileMenuOpen;
+    this.mobileMenuStateChange.emit(this.isMobileMenuOpen);
   }
 
   trackBySection(index: number, section: string): string {

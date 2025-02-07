@@ -17,6 +17,10 @@ main {
   color: var(--color-purple);
 }
 
+main.hidden {
+  color: white;
+}
+
 /* Responsive design: Adjust layout for smaller screens */
 @media (max-width: 768px) {
   .container {
