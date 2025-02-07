@@ -107,17 +107,20 @@ a {
 
       display: flex;
       flex-direction: column;
-      background-color: white; //RSMTODO
 
       position: absolute;
       width: 100%;
-      margin-top: 6rem;
+      margin-top: 5.1rem;
+
       ul {
         flex-direction: column;
         display: flex;
         align-items: center;
         gap: 3rem;
-        padding: 2rem 0rem;
+        margin: 2rem 0rem;
+        background-color: white;
+
+        min-height: calc(100vh - 6rem);
       }
     }
   }
