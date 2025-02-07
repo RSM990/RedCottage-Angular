@@ -24,7 +24,7 @@ $breakpoint-large: 1024px; // Desktop
   }
 }
 
-@mixin xlarge {
+@mixin xLarge {
   @media (min-width: #{$breakpoint-large}) {
     @content;
   }
