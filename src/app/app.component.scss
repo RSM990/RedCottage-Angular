@@ -1,3 +1,5 @@
+@import "../styles/base/base";
+
 .container {
   display: flex;
   flex-direction: column;
@@ -38,6 +40,10 @@ main {
 
 section {
   min-height: 100vh;
-  padding: 6.5rem 5.5rem;
   border-bottom: 1px solid #ddd;
+
+  padding: 5.5rem 0.5rem;
+  @include xLarge {
+    padding: 6.5rem 2.4rem;
+  }
 }
