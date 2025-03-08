@@ -1,0 +1,66 @@
+.menu-item-card {
+  display: grid;
+
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  margin: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  max-width: 32rem;
+  min-height: 42rem;
+  max-height: 42rem;
+}
+
+.menu-item-image {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  grid-row: 1 / 4;
+}
+
+h3 {
+  margin: 0 0 0.5rem 0;
+  color: #333;
+  font-size: 2rem; // Changed from 1.5rem to 2rem
+}
+
+.description {
+  color: #666;
+  margin-bottom: 1rem;
+  line-height: 1.4;
+  grid-row: 3;
+  grid-column: 2 / 4;
+  font-size: 2rem;
+}
+
+.price {
+  font-size: 1.25rem;
+  color: #2c5282;
+  font-weight: bold;
+  grid-row: 2;
+}
+
+.availability {
+  color: #48bb78;
+  font-weight: 500;
+  grid-row: 2;
+  grid-column: 3;
+
+  &.unavailable {
+    color: #e53e3e;
+  }
+}
+
+.ingredients {
+  grid-column: 1 / 4;
+  font-size: 1.25rem;
+  color: #2c5282;
+  font-weight: bold;
+  grid-row: 4;
+}
+
+.name {
+  grid-column: 2 / 4;
+  grid-row: 1;
+}

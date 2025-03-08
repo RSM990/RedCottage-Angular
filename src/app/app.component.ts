@@ -4,10 +4,10 @@ import { FooterComponent } from './layout/footer/footer.component';
 import { ScrollNavigationComponent } from './layout/scroll-navigation/scroll-navigation.component';
 import { WelcomeComponent } from './sections/welcome/welcome.component';
 import { AboutComponent } from './sections/about/about.component';
-import { MenuComponent } from './sections/menu/menu.component';
 import { ScheduleComponent } from './sections/schedule/schedule.component';
 import { ContactComponent } from './sections/contact/contact.component';
 import { CommonModule } from '@angular/common';
+import { MenuComponent } from './sections/menu/pages/menu/menu.component';
 
 @Component({
   selector: 'app-root',

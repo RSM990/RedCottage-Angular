@@ -1,0 +1,22 @@
+<div class="menu-item-card">
+  <img
+    [src]="menuItem.imageUrl"
+    [alt]="menuItem.name"
+    class="menu-item-image"
+  />
+  <section class="menu-item-details">
+    <p class="name">{{ menuItem.name }}</p>
+    <p class="price">${{ menuItem.price }}</p>
+    <p class="description">{{ menuItem.description }}</p>
+    <!-- </p>
+  <p class="availability" [class.unavailable]="!menuItem.currentlyAvailable">
+    {{ menuItem.currentlyAvailable ? "Available" : "Currently Unavailable" }}
+  </p> -->
+  </section>
+  <section class="menu-item-ingredients">
+    <p class="ingredients">
+      <strong>Ingredients:</strong>
+      {{ menuItem.ingredients }}
+    </p>
+  </section>
+</div>
