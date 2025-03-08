@@ -4,17 +4,12 @@
     [alt]="menuItem.name"
     class="menu-item-image"
   />
-  <section class="menu-item-details">
-    <p class="name">{{ menuItem.name }}</p>
-    <p class="price">${{ menuItem.price }}</p>
-    <p class="description">{{ menuItem.description }}</p>
-    <!-- </p>
-  <p class="availability" [class.unavailable]="!menuItem.currentlyAvailable">
-    {{ menuItem.currentlyAvailable ? "Available" : "Currently Unavailable" }}
-  </p> -->
-  </section>
-  <section class="menu-item-ingredients">
-    <p class="ingredients">
+
+  <section class="menu-item-info">
+    <p class="menu-item-info-name">{{ menuItem.name }}</p>
+    <p class="menu-item-info-price">${{ menuItem.price }}</p>
+
+    <p class="menu-item-info-ingredients">
       <strong>Ingredients:</strong>
       {{ menuItem.ingredients }}
     </p>

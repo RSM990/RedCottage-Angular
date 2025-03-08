@@ -1,11 +1,6 @@
 .menu-list {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(35rem, 60rem));
   gap: 1rem;
-
-  app-menu-list-item {
-    flex: 1 1 300px; // grow, shrink, basis
-    // min-width: 0; // prevents overflow
-    // max-width: 100%;
-  }
+  justify-content: center;
 }
