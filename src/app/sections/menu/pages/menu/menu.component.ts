@@ -110,7 +110,8 @@ export class MenuComponent {
       description: 'Our signature house cookies with a secret recipe',
       currentlyAvailable: true,
       imageUrl: '../../../../../assets/images/red-cottage-cookies.png',
-      ingredients: 'Secret family recipe',
+      ingredients:
+        'Flour, butter, sugar, eggs, vanilla, baking powder, powdered sugar, milk',
     },
     {
       id: 11,
