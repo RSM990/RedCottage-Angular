@@ -1,0 +1,9 @@
+@import "../../../../styles/base/base";
+
+.content {
+  @include xLarge {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}

@@ -1,11 +1,10 @@
 import { Component } from '@angular/core';
+import { ContentPageComponent } from '../../shared/components/content-page/content-page.component';
 
 @Component({
   selector: 'app-about',
-  imports: [],
+  imports: [ContentPageComponent],
   templateUrl: './about.component.html',
-  styleUrl: './about.component.scss'
+  styleUrl: './about.component.scss',
 })
-export class AboutComponent {
-
-}
+export class AboutComponent {}

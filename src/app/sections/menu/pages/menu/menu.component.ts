@@ -2,10 +2,11 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { MenuListComponent } from '../../components/menu-list/menu-list.component';
 import { MenuItem } from '../../../../core/models/menuItem';
+import { ContentPageComponent } from '../../../../shared/components/content-page/content-page.component';
 
 @Component({
   selector: 'app-menu',
-  imports: [CommonModule, MenuListComponent],
+  imports: [CommonModule, MenuListComponent, ContentPageComponent],
   templateUrl: './menu.component.html',
   styleUrl: './menu.component.scss',
 })
