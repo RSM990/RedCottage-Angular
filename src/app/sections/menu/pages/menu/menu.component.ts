@@ -27,7 +27,7 @@ export class MenuComponent {
       price: 5.0,
       description: 'Rich chocolate brownies with a fudgy center',
       currentlyAvailable: true,
-      imageUrl: '../../../../../assets/images/brownies.png',
+      imageUrl: '../../../../../assets/images/brownies.JPEG',
       ingredients:
         'Chocolate, butter, sugar, eggs, flour, cocoa powder, vanilla',
     },
@@ -69,7 +69,7 @@ export class MenuComponent {
       description:
         'Moist almond cake made with ground almonds, perfect for gluten-sensitive customers',
       currentlyAvailable: true,
-      imageUrl: '../../../../../assets/images/almond-cake.jpg',
+      imageUrl: '../../../../../assets/images/almond-cake.JPEG',
       ingredients:
         'Ground almonds, eggs, sugar, butter, vanilla, baking powder',
     },
@@ -109,7 +109,7 @@ export class MenuComponent {
       price: 2.0,
       description: 'Our signature house cookies with a secret recipe',
       currentlyAvailable: true,
-      imageUrl: '../../../../../assets/images/red-cottage-cookies.png',
+      imageUrl: '../../../../../assets/images/red-cottage-cookies.JPEG',
       ingredients:
         'Flour, butter, sugar, eggs, vanilla, baking powder, powdered sugar, milk',
     },
