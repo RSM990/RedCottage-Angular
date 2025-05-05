@@ -1,5 +1,9 @@
 @import "../../../../../styles/base/base.scss";
 
+$menu-item-width-l: 20rem;
+$menu-item-width-m: 18rem;
+$menu-item-width-s: 16rem;
+
 .menu-item {
   &-card {
     border: 1px solid #ddd;
@@ -7,53 +11,40 @@
     overflow: hidden;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     display: flex;
+
+    flex-direction: column;
+    max-width: $menu-item-width-s;
+    min-width: $menu-item-width-s;
+    @include medium {
+      max-width: $menu-item-width-m;
+      min-width: $menu-item-width-m;
+    }
     @include xLarge {
-      min-width: 40rem;
+      max-width: $menu-item-width-l;
+      min-width: $menu-item-width-l;
     }
   }
 
   &-image {
-    min-width: 11rem;
-    max-width: 11rem;
-    height: 11rem;
+    width: 100%;
+    height: $menu-item-width-s;
 
     object-fit: cover;
 
-    @include large {
-      min-width: 12rem;
-      max-width: 12rem;
-      height: 12rem;
+    @include medium {
+      height: $menu-item-width-m;
     }
     @include xLarge {
-      min-width: 13rem;
-      max-width: 13rem;
-      height: 13rem;
+      height: $menu-item-width-l;
     }
   }
 
   &-info {
     padding: 0 1rem;
-    display: flex;
-    flex-direction: column;
-
-    &-price {
-      font-size: 1.25rem;
-      color: #2c5282;
-      font-weight: bold;
-      flex-grow: 1;
-    }
-
-    &-ingredients {
-      font-size: 1.25rem;
-      color: #2c5282;
-      font-weight: bold;
+    height: 8rem;
+    &-seasonal {
+      font-size: 1.4rem;
+      font-weight: 600;
     }
   }
 }
-
-// .description {
-//   color: #666;
-//   margin-bottom: 1rem;
-//   line-height: 1.4;
-//   font-size: 2rem;
-// }

@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MenuItem } from '../../../../core/models/menuItem';
 import { MenuListItemComponent } from '../menu-list-item/menu-list-item.component';
@@ -10,7 +10,13 @@ import { MenuListItemComponent } from '../menu-list-item/menu-list-item.componen
   templateUrl: './menu-list.component.html',
   styleUrl: './menu-list.component.scss',
 })
-export class MenuListComponent {
+export class MenuListComponent implements OnChanges {
   @Input() title: string = '';
   @Input() items: MenuItem[] = [];
+
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes['items'] && this.items) {
+      this.items.sort((a, b) => (a.name > b.name ? 1 : -1));
+    }
+  }
 }

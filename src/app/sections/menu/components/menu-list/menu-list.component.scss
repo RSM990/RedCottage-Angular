@@ -1,6 +1,7 @@
 .menu-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(35rem, 60rem));
+  display: flex;
+  // grid-template-columns: repeat(auto-fit, minmax(35rem, 60rem));
   gap: 1rem;
+  flex-flow: row wrap;
   justify-content: center;
 }
