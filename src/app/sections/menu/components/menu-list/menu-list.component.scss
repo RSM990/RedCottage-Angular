@@ -4,4 +4,7 @@
   gap: 1rem;
   flex-flow: row wrap;
   justify-content: center;
+
+  max-height: calc(100vh - 22rem);
+  overflow-y: auto;
 }
